@@ -69,10 +69,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\AdminDashbordForm.cs">
+    <Compile Include="DashbordForms\AdminDashbordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\AdminDashbordForm.Designer.cs">
+    <Compile Include="DashbordForms\AdminDashbordForm.Designer.cs">
       <DependentUpon>AdminDashbordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CourseForm.cs">
@@ -87,10 +87,10 @@
     <Compile Include="Forms\ExamForm.Designer.cs">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LecturerDashbordForm.cs">
+    <Compile Include="DashbordForms\LecturerDashbordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LecturerDashbordForm.Designer.cs">
+    <Compile Include="DashbordForms\LecturerDashbordForm.Designer.cs">
       <DependentUpon>LecturerDashbordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LecturerForm.cs">
@@ -104,12 +104,6 @@
     </Compile>
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MarksForm.cs">
       <SubType>Form</SubType>
@@ -129,10 +123,10 @@
     <Compile Include="Forms\RoomForm.Designer.cs">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StaffDashbordForm.cs">
+    <Compile Include="DashbordForms\StaffDashbordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StaffDashbordForm.Designer.cs">
+    <Compile Include="DashbordForms\StaffDashbordForm.Designer.cs">
       <DependentUpon>StaffDashbordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StaffForm.cs">
@@ -141,10 +135,10 @@
     <Compile Include="Forms\StaffForm.Designer.cs">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentDashbordForm.cs">
+    <Compile Include="DashbordForms\StudentDashbordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StudentDashbordForm.Designer.cs">
+    <Compile Include="DashbordForms\StudentDashbordForm.Designer.cs">
       <DependentUpon>StudentDashbordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentForm.cs">
@@ -186,7 +180,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AdminDashbordForm.resx">
+    <EmbeddedResource Include="DashbordForms\AdminDashbordForm.resx">
       <DependentUpon>AdminDashbordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CourseForm.resx">
@@ -195,7 +189,7 @@
     <EmbeddedResource Include="Forms\ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LecturerDashbordForm.resx">
+    <EmbeddedResource Include="DashbordForms\LecturerDashbordForm.resx">
       <DependentUpon>LecturerDashbordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LecturerForm.resx">
@@ -203,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MarksForm.resx">
       <DependentUpon>MarksForm.cs</DependentUpon>
@@ -216,13 +207,13 @@
     <EmbeddedResource Include="Forms\RoomForm.resx">
       <DependentUpon>RoomForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StaffDashbordForm.resx">
+    <EmbeddedResource Include="DashbordForms\StaffDashbordForm.resx">
       <DependentUpon>StaffDashbordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StaffForm.resx">
       <DependentUpon>StaffForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentDashbordForm.resx">
+    <EmbeddedResource Include="DashbordForms\StudentDashbordForm.resx">
       <DependentUpon>StudentDashbordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentForm.resx">
