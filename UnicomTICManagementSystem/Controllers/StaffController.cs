@@ -11,7 +11,27 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class StaffController
     {
-        public async Task<List<Staff>> GetAllAsync() { var list = new List<Staff>(); using (var conn = DBConfig.GetConnection()) { var cmd = new SQLiteCommand("SELECT * FROM Staffs", conn); using (var reader = await cmd.ExecuteReaderAsync()) { while (await reader.ReadAsync()) { list.Add(new Staff { StaffID = Convert.ToInt32(reader["StaffID"]), Name = reader["Name"].ToString(), Address = reader["Address"].ToString(), JobTitle = reader["JobTitle"].ToString() }); } } } return list; }
+        public async Task<List<Staff>> GetAllAsync()
+        {
+            var list = new List<Staff>(); 
+            using (var conn = DBConfig.GetConnection())
+            { 
+                var cmd = new SQLiteCommand("SELECT * FROM Staffs", conn);
+                using (var reader = await cmd.ExecuteReaderAsync()) 
+                { while (await reader.ReadAsync())
+                    { 
+                        list.Add(new Staff 
+                        { 
+                            StaffID = Convert.ToInt32(reader["StaffID"]),
+                            Name = reader["Name"].ToString(),
+                            Address = reader["Address"].ToString(),
+                            JobTitle = reader["JobTitle"].ToString()
+                        }); 
+                    }
+                }
+            } 
+            return list;
+        }
 
         public async Task AddAsync(Staff staff)
         {

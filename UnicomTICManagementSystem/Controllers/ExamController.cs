@@ -11,7 +11,27 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class ExamController
     {
-        public async Task<List<Exam>> GetAllAsync() { var list = new List<Exam>(); using (var conn = DBConfig.GetConnection()) { var cmd = new SQLiteCommand("SELECT * FROM Exams", conn); using (var reader = await cmd.ExecuteReaderAsync()) { while (await reader.ReadAsync()) { list.Add(new Exam { ExamId = reader.GetInt32(0), ExamName = reader.GetString(1), SubjectID = reader.GetInt32(2) }); } } } return list; }
+        public async Task<List<Exam>> GetAllAsync() 
+        { 
+            var list = new List<Exam>();
+            using (var conn = DBConfig.GetConnection()) 
+            { 
+                var cmd = new SQLiteCommand("SELECT * FROM Exams", conn);
+                using (var reader = await cmd.ExecuteReaderAsync())
+                { 
+                    while (await reader.ReadAsync())
+                    { 
+                        list.Add(new Exam
+                        {
+                            ExamId = reader.GetInt32(0),
+                            ExamName = reader.GetString(1),
+                            SubjectID = reader.GetInt32(2) 
+                        });
+                    }
+                } 
+            }
+            return list;
+        }
 
         public async Task AddAsync(Exam exam)
         {

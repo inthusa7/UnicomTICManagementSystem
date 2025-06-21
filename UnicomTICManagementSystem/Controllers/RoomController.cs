@@ -11,7 +11,27 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class RoomController
     {
-        public async Task<List<Room>> GetAllAsync() { var list = new List<Room>(); using (var conn = DBConfig.GetConnection()) { var cmd = new SQLiteCommand("SELECT * FROM Rooms", conn); using (var reader = await cmd.ExecuteReaderAsync()) { while (await reader.ReadAsync()) { list.Add(new Room { RoomId = reader.GetInt32(0), RoomName = reader.GetString(1), RoomType = reader.GetString(2) }); } } } return list; }
+        public async Task<List<Room>> GetAllAsync()
+        {
+            var list = new List<Room>();
+            using (var conn = DBConfig.GetConnection()) 
+            { 
+                var cmd = new SQLiteCommand("SELECT * FROM Rooms", conn);
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    { 
+                        list.Add(new Room
+                        { 
+                            RoomId = reader.GetInt32(0), 
+                            RoomName = reader.GetString(1),
+                            RoomType = reader.GetString(2)
+                        });
+                    } 
+                }
+            } 
+            return list;
+        }
 
         public async Task AddAsync(Room room)
         {

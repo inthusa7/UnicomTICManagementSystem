@@ -100,8 +100,8 @@ namespace UnicomTICManagementSystem.Forms
         {
             LoadForm(new StaffForm());
         }
-        //private Panel panelMain;
-        // private Button btnCourse
+        
+       
 
     }
 

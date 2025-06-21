@@ -19,10 +19,10 @@ namespace UnicomTICManagementSystem.Forms
         {
             InitializeComponent();
             studentId = id ;
-            //lblWelcome.Text = "Welcome, " + username;
+            
         }
 
-      //  public StudentDashbordForm(int userId)
+      
         
 
         
@@ -46,8 +46,7 @@ namespace UnicomTICManagementSystem.Forms
 
         private void btnViewMarks_Click(object sender, EventArgs e)
         {
-            //var marksForm = new StudentMarksForm(studentUsername);
-            //marksForm.Show();
+         
             LoadForm(new StudentMarksForm(studentId));
 
         }

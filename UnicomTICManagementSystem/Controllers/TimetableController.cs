@@ -12,7 +12,28 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class TimetableController
     {
-        public async Task<List<Timetable>> GetAllAsync() { var list = new List<Timetable>(); using (var conn = DBConfig.GetConnection()) { var cmd = new SQLiteCommand("SELECT * FROM Timetables", conn); using (var reader = await cmd.ExecuteReaderAsync()) { while (await reader.ReadAsync()) { list.Add(new Timetable { TimetableID = reader.GetInt32(0), SubjectID = reader.GetInt32(1), TimeSlot = reader.GetString(2), RoomID = reader.GetInt32(3) }); } } } return list; }
+        public async Task<List<Timetable>> GetAllAsync() 
+        {
+            var list = new List<Timetable>();
+            using (var conn = DBConfig.GetConnection()) 
+            { 
+                var cmd = new SQLiteCommand("SELECT * FROM Timetables", conn);
+                using (var reader = await cmd.ExecuteReaderAsync()) 
+                { 
+                    while (await reader.ReadAsync())
+                    { 
+                        list.Add(new Timetable 
+                        {
+                            TimetableID = reader.GetInt32(0),
+                            SubjectID = reader.GetInt32(1), 
+                            TimeSlot = reader.GetString(2),
+                            RoomID = reader.GetInt32(3)
+                        });
+                    }
+                }
+            }
+            return list;
+        }
         
         public async Task AddAsync(Timetable timetable)
         {

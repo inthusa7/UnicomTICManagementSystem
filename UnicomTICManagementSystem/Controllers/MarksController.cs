@@ -12,7 +12,28 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class MarksController
     {
-        public async Task<List<Mark>> GetAllAsync() { var list = new List<Mark>(); using (var conn = DBConfig.GetConnection()) { var cmd = new SQLiteCommand("SELECT * FROM Marks", conn); using (var reader = await cmd.ExecuteReaderAsync()) { while (await reader.ReadAsync()) { list.Add(new Mark { MarkID = reader.GetInt32(0), StudentID = reader.GetInt32(1), ExamID = reader.GetInt32(2), Score = reader.GetInt32(3) }); } } } return list; }
+        public async Task<List<Mark>> GetAllAsync() 
+        {
+            var list = new List<Mark>();
+            using (var conn = DBConfig.GetConnection())
+            { 
+                var cmd = new SQLiteCommand("SELECT * FROM Marks", conn);
+                using (var reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (await reader.ReadAsync())
+                    { 
+                        list.Add(new Mark
+                        {
+                            MarkID = reader.GetInt32(0),
+                            StudentID = reader.GetInt32(1), 
+                            ExamID = reader.GetInt32(2),
+                            Score = reader.GetInt32(3)
+                        });
+                    }
+                }
+            } 
+            return list; 
+        }
 
         public async Task<List<Mark>> GetMarksByStudentIdAsync(int studentId)
         {

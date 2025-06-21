@@ -15,7 +15,7 @@ namespace UnicomTICManagementSystem.Forms
 {
     public partial class StudentMarksForm : Form
     {
-        //private readonly string studentUsername;
+        
         private readonly int studentId;
         private readonly MarksController marksController = new MarksController();
 

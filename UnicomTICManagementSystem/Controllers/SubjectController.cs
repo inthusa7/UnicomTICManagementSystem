@@ -11,7 +11,28 @@ namespace UnicomTICManagementSystem.Controllers
 {
     internal class SubjectController
     {
-        public async Task<List<Subject>> GetAllAsync() { var list = new List<Subject>(); using (var conn = DBConfig.GetConnection()) { var cmd = new SQLiteCommand("SELECT * FROM Subjects", conn); using (var reader = await cmd.ExecuteReaderAsync()) { while (await reader.ReadAsync()) { list.Add(new Subject { SubjectID = reader.GetInt32(0), SubjectName = reader.GetString(1), CourseID = reader.GetInt32(2) }); } } } return list; }
+        public async Task<List<Subject>> GetAllAsync()
+        { 
+            var list = new List<Subject>();
+            using (var conn = DBConfig.GetConnection())
+            { 
+                var cmd = new SQLiteCommand("SELECT * FROM Subjects", conn);
+                using (var reader = await cmd.ExecuteReaderAsync()) 
+                { 
+                    while (await reader.ReadAsync())
+                    { 
+                        list.Add(new Subject
+                        {
+                            SubjectID = reader.GetInt32(0),
+                            SubjectName = reader.GetString(1),
+                            CourseID = reader.GetInt32(2) 
+                        });
+                    }
+                }
+            }
+            return list;
+        }
+
 
         public async Task AddAsync(Subject subject)
         {

@@ -87,7 +87,7 @@ namespace UnicomTICManagementSystem.Forms
         private void txtStudentName_TextChanged(object sender, EventArgs e)
         {
             string name = txtStudentName.Text;
-            //MessageBox.Show("You typed:" + name);
+            
            
         }
 
